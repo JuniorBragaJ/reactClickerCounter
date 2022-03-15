@@ -1,4 +1,4 @@
-#Instalar dependências
+Instalar dependências
 
 ```sh
 yarn install
