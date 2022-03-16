@@ -12,4 +12,5 @@ yarn dev
 
 
 
-![image](https://user-images.githubusercontent.com/74020211/158479272-1ffa662b-54c2-4bfc-bb13-112301b1a22f.png)
+![image](https://user-images.githubusercontent.com/74020211/158699434-c28c0dbb-bacc-4762-917f-a1ee76d43fa2.png)
+
