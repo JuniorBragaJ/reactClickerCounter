@@ -11,11 +11,14 @@ function MyClickerCounter({ expiryTimestamp }) {
   } = useTimer({ expiryTimestamp, autoStart: false, onExpire: () => console.warn('onExpire called') });
 
 
-  const handlePoints = (count) => {
-    (count !== 0); {
-      setPoints(points.concat(count))
-    }
+function handlePoints (count) { // Caso valor de cliques for maior que zero ele adiciona o valor a lista de pontuação
+  if(count !== 0) {
+    setPoints(points.concat(count))
   }
+  else {
+    console.log('The game has been reset!')
+  }
+}
 
   const [count, setCount] = useState(0)
   const [points, setPoints] = useState([])
@@ -57,13 +60,14 @@ function MyClickerCounter({ expiryTimestamp }) {
 }
 
 function BestScore({ points }) {
+  const orderedPoints = points.sort((a, b)=> { return b - a })
   return (
     <>
       <ul> <span style={{ fontSize: '25px' }}>PONTUAÇÃO:</span>
-        {points.map((score, index) => {
+        {orderedPoints.map((score, index) => {
           return (
             <div style={{ fontSize: '20px' }} key={index}>
-              <span key={index}>{score}</span>
+              <span key={index}>{score} pts</span>
             </div>
           )
         })}
